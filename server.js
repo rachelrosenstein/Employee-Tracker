@@ -198,3 +198,46 @@ function addDept() {
             )
         })
 }
+
+//add role
+
+// view all roles
+
+// update employee role
+
+function updateEmployeeRole() {
+
+    connection.query("SELECT first_name, last_name, id FROM employees",
+        function (err, res) {
+            // for (let i=0; i <res.length; i++){
+            //   employees.push(res[i].first_name + " " + res[i].last_name);
+            // }
+            let employees = res.map(employee => ({ name: employee.first_name + " " + employee.last_name, value: employee.id }))
+
+            inquirer
+                .prompt([
+                    {
+                        type: "list",
+                        name: "employeeName",
+                        message: "Which employee's role would you like to update?",
+                        choices: employees
+                    },
+                    {
+                        type: "input",
+                        name: "role",
+                        message: "What is your new role?"
+                    }
+                ])
+                .then(function (res) {
+                    connection.query(`UPDATE employees SET role_id = ${res.role} WHERE id = ${res.employeeName}`,
+                        function (err, res) {
+                            console.log(res);
+                            //updateRole(res);
+                            start()
+                        }
+                    );
+                })
+        }
+    )
+}
+
