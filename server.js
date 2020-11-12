@@ -142,3 +142,33 @@ function viewAllDept() {
         start();
     })
 }
+
+function removeEmployee() {
+    let employeeList = [];
+    connection.query(
+        "SELECT employees.first_name, employees.last_name FROM employees", (err, res) => {
+            for (let i = 0; i < res.length; i++) {
+                employeeList.push(res[i].first_name + " " + res[i].last_name);
+            }
+            inquirer
+                .prompt([
+                    {
+                        type: "list",
+                        message: "Which employee would you like to delete?",
+                        name: "employee",
+                        choices: employeeList
+
+                    },
+                ])
+                .then(function (res) {
+                    const query = connection.query(
+                        `DELETE FROM employees WHERE concat(first_name, ' ' ,last_name) = '${res.employee}'`,
+                        function (err, res) {
+                            if (err) throw err;
+                            console.log("Employee deleted!\n");
+                            start();
+                        });
+                });
+        }
+    );
+};
