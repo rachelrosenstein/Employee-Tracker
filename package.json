@@ -1,0 +1,24 @@
+{
+    "name": "hw-12",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rachelrosenstein/Employee-Tracker.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rachelrosenstein/Employee-Tracker"
+    },
+    "homepage": "https://github.com/rachelrosenstein/Employee-Tracker",
+    "dependencies": {
+        "console.table": "^0.10.0",
+        "inquirer": "^7.0.4",
+        "mysql": "^2.18.1"
+    }
+}
