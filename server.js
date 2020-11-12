@@ -201,6 +201,53 @@ function addDept() {
 
 //add role
 
+function addRole() {
+    let departments = [];
+    connection.query("SELECT * FROM departments",
+        function (err, res) {
+            if (err) throw err;
+            for (let i = 0; i < res.length; i++) {
+                res[i].first_name + " " + res[i].last_name
+                departments.push({ name: res[i].name, value: res[i].id });
+            }
+            inquirer
+                .prompt([
+                    {
+                        type: "input",
+                        name: "title",
+                        message: "What role would you like to add?"
+                    },
+                    {
+                        type: "input",
+                        name: "salary",
+                        message: "What is the salary for the role?"
+                    },
+                    {
+                        type: "list",
+                        name: "department",
+                        message: "what department?",
+                        choices: departments
+                    }
+                ])
+                .then(function (res) {
+                    console.log(res);
+                    const query = connection.query(
+                        "INSERT INTO roles SET ?",
+                        {
+                            title: res.title,
+                            salary: res.salary,
+                            department_id: res.department
+                        },
+                        function (err, res) {
+                            if (err) throw err;
+                            //const id = res.insertId;
+                            start();
+                        }
+                    )
+                })
+        })
+}
+
 // view all roles
 function viewAllRoles() {
     connection.query("SELECT roles.*, departments.name FROM roles LEFT JOIN departments ON departments.id = roles.department_id", function (err, res) {
