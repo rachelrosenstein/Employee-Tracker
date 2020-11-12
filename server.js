@@ -135,3 +135,10 @@ function viewAllEmployees() {
             start();
         });
 }
+
+function viewAllDept() {
+    connection.query("SELECT * FROM departments", function (err, res) {
+        console.table(res);
+        start();
+    })
+}
