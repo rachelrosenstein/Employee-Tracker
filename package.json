@@ -1,24 +1,28 @@
 {
-    "name": "hw-12",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/rachelrosenstein/Employee-Tracker.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/rachelrosenstein/Employee-Tracker"
-    },
-    "homepage": "https://github.com/rachelrosenstein/Employee-Tracker",
-    "dependencies": {
-        "console.table": "^0.10.0",
-        "inquirer": "^7.0.4",
-        "mysql": "^2.18.1"
-    }
+  "name": "Employee-Tracker",
+  "version": "1.0.0",
+  "description": "My-Employee is an employee tracker. It's a solution for managing a company's employees using node, inquirer, and MySQL. After running to code in the terminal, npm start, a user will be able to add departments, roles, and employees. View departments, roles, and employees, as well as update employee roles.",
+  "main": "server.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1",
+    "node": "^15.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelrosenstein/Employee-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachelrosenstein/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/rachelrosenstein/Employee-Tracker#readme"
 }
