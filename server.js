@@ -202,6 +202,15 @@ function addDept() {
 //add role
 
 // view all roles
+function viewAllRoles() {
+    connection.query("SELECT roles.*, departments.name FROM roles LEFT JOIN departments ON departments.id = roles.department_id", function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        start();
+    }
+    )
+}
+
 
 // update employee role
 
