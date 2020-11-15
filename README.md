@@ -3,6 +3,7 @@ My-Employee is an employee tracker. It's a solution for managing a company's emp
 
 Update employee managers, View employees by manager, Delete departments, roles, and employees, View the total utilized budget of a department -- ie the combined salaries of all employees in that department
 
+![Screen Shot of application](https://github.com/rachelrosenstein/Employee-Tracker/blob/main/Screen%20Shot%202020-11-15%20at%208.08.12%20AM.png?raw=true)
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
