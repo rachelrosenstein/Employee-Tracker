@@ -18,8 +18,7 @@ Package.json, so make sure to npm install as well as inquierer package.
 As a business owner
 I want to be able to view and manage the departments, roles, and employees in my company
 So that I can organize and plan my business
-![image 1]()
-![image 2]()
+# Link to video Demo:https://github.com/rachelrosenstein/Employee-Tracker/blob/main/Demonstration-Employee%20Tracker.mov
 ## License
 MIT
 ## Contributing
